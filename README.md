@@ -14,7 +14,12 @@
 ## 🌐 ウェブアプリ
 
 オンラインで今すぐ使用できます：
+
+**GitHub Pages:**
 👉 **[https://kyana05020325-crypto.github.io/to-do-app/](https://kyana05020325-crypto.github.io/to-do-app/)**
+
+**Vercel（推奨）:**
+👉 **[https://to-do-app-to9k.vercel.app/](https://to-do-app-to9k.vercel.app/)**
 
 （インストール不要！ブラウザで直接アクセスして使用してください）
 
