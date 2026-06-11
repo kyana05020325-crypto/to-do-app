@@ -7,9 +7,51 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
+    <!-- 認証UI -->
+    <div id="authUI" class="auth-container" style="display: none;">
+        <div class="auth-box">
+            <h1>🔐 To Do アプリ</h1>
+
+            <div class="auth-tabs">
+                <button class="auth-tab-btn active" onclick="switchAuthTab('login')">ログイン</button>
+                <button class="auth-tab-btn" onclick="switchAuthTab('signup')">サインアップ</button>
+            </div>
+
+            <!-- ログインフォーム -->
+            <div id="loginTab" class="auth-tab-content active">
+                <div class="form-group">
+                    <label>メールアドレス</label>
+                    <input type="email" id="loginEmail" placeholder="example@email.com" class="auth-input">
+                </div>
+                <div class="form-group">
+                    <label>パスワード</label>
+                    <input type="password" id="loginPassword" placeholder="パスワード" class="auth-input">
+                </div>
+                <button onclick="app.signIn()" class="auth-btn">ログイン</button>
+            </div>
+
+            <!-- サインアップフォーム -->
+            <div id="signupTab" class="auth-tab-content" style="display: none;">
+                <div class="form-group">
+                    <label>メールアドレス</label>
+                    <input type="email" id="signupEmail" placeholder="example@email.com" class="auth-input">
+                </div>
+                <div class="form-group">
+                    <label>パスワード</label>
+                    <input type="password" id="signupPassword" placeholder="パスワード（6文字以上）" class="auth-input">
+                </div>
+                <button onclick="app.signUp()" class="auth-btn">サインアップ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- アプリメインUI -->
+    <div id="appContent" class="container">
         <div class="app">
-            <h1>📝 My To Do List</h1>
+            <div class="app-header">
+                <h1>📝 My To Do List</h1>
+                <button id="logoutBtn" class="logout-btn">ログアウト</button>
+            </div>
 
             <div class="input-section">
                 <input
@@ -58,6 +100,16 @@
         </div>
     </div>
 
-    <script src="app.js"></script>
+    <script type="module" src="app.js"></script>
+    <script>
+        function switchAuthTab(tab) {
+            document.getElementById('loginTab').style.display = tab === 'login' ? 'block' : 'none';
+            document.getElementById('signupTab').style.display = tab === 'signup' ? 'block' : 'none';
+
+            document.querySelectorAll('.auth-tab-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.textContent.includes(tab === 'login' ? 'ログイン' : 'サインアップ'));
+            });
+        }
+    </script>
 </body>
 </html>
