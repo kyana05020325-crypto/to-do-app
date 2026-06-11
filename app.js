@@ -378,3 +378,6 @@ class TodoApp {
 }
 
 const app = new TodoApp();
+
+// グローバルスコープに登録（HTMLのonclick等で使用）
+window.app = app;
