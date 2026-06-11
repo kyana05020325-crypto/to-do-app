@@ -19,13 +19,34 @@
                     placeholder="新しいタスクを入力..."
                     autocomplete="off"
                 >
+                <select id="categorySelect" class="category-select">
+                    <option value="other">その他</option>
+                    <option value="work">💼 仕事</option>
+                    <option value="personal">👤 プライベート</option>
+                    <option value="shopping">🛒 買い物</option>
+                    <option value="health">💪 健康</option>
+                </select>
+                <button id="voiceBtn" class="voice-btn" title="音声入力">🎤</button>
                 <button id="addBtn" class="add-btn">追加</button>
             </div>
 
-            <div class="filters">
-                <button class="filter-btn active" data-filter="all">すべて</button>
-                <button class="filter-btn" data-filter="active">未完了</button>
-                <button class="filter-btn" data-filter="completed">完了</button>
+            <div class="filter-section">
+                <div class="filters">
+                    <h3>ステータス</h3>
+                    <button class="filter-btn active" data-filter="all">すべて</button>
+                    <button class="filter-btn" data-filter="active">未完了</button>
+                    <button class="filter-btn" data-filter="completed">完了</button>
+                </div>
+
+                <div class="categories">
+                    <h3>カテゴリー</h3>
+                    <button class="category-btn active" data-category="all">すべて</button>
+                    <button class="category-btn" data-category="work">💼 仕事</button>
+                    <button class="category-btn" data-category="personal">👤 プライベート</button>
+                    <button class="category-btn" data-category="shopping">🛒 買い物</button>
+                    <button class="category-btn" data-category="health">💪 健康</button>
+                    <button class="category-btn" data-category="other">📌 その他</button>
+                </div>
             </div>
 
             <ul id="taskList" class="task-list"></ul>
