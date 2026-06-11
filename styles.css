@@ -150,12 +150,36 @@ h1 {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 25px;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
 .app-header h1 {
     margin: 0;
     flex: 1;
     text-align: center;
+    min-width: 200px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 12px;
+    background: #f0f4ff;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+.user-email {
+    font-size: 14px;
+    color: #667eea;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.user-email:hover {
+    color: #764ba2;
 }
 
 .logout-btn {

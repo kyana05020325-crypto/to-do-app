@@ -99,12 +99,23 @@ class TodoApp {
     }
 
     init() {
+        this.displayUserInfo();
         this.loadTasks();
         this.setupEventListeners();
         this.setupRealtimeSubscription();
         this.render();
         document.getElementById('authUI').style.display = 'none';
         document.getElementById('appContent').style.display = 'block';
+    }
+
+    displayUserInfo() {
+        if (this.user) {
+            const userEmailElement = document.getElementById('userEmail');
+            if (userEmailElement) {
+                userEmailElement.textContent = `👤 ${this.user.email}`;
+                userEmailElement.title = `User ID: ${this.user.id}`;
+            }
+        }
     }
 
     setupRealtimeSubscription() {
